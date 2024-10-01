@@ -5,7 +5,7 @@ describe('login', () => {
     beforeEach(() => {
         cy.visit('https://practicetestautomation.com/practice-test-login/')
         })
-    it('tc-01', () => {
+    it.only('tc-01', () => {
         //cy.login('student', 'Password123')
         cy.login(testDatalogin.username.positive ,testDatalogin.password.positive)
         //cy.get('#username').type('incorrectUser')
@@ -23,7 +23,7 @@ describe('login', () => {
         //cy.get('#submit').click()
         cy.get('#error').contains('Your username is invalid!')
     })
-    it.only('tc-03', () => {
+    it('tc-03', () => {
         //cy.login('student', 'incorrectPassword')
         cy.login(testDatalogin.username.positive ,testDatalogin.password.negative)
         loginPage.verifyLoginErrorPassword()
